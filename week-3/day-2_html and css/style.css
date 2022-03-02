@@ -1,0 +1,20 @@
+/*selector*/
+
+/*tag html*/
+h2{
+    color: red;
+
+}
+p{
+    color:lightcoral;
+    word-spacing: 2px;
+}
+/*class name*/
+.nama_ku{
+    color: red;
+}
+
+/*id name*/
+#list{
+    list-style: circle;
+}
