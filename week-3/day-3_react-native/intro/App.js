@@ -1,112 +1,64 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
+import {View, Text, TouchableOpacity} from 'react-native';
+import React, {useState} from 'react';
 
-import React from 'react';
-import type {Node} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+//jsx
+//state adalah data yang hanya bisa diakses oleh si component tersebut, terkecuali jika data tersebut dikirim via props
+export default function App() {
+  const [firstName, setFirstName] = useState('Mutiara A'); //useState itu triggerAwal
+  const [age, setAge] = useState(20);
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+  if (firstName === 'Mutiara A') {
+    return (
+      <View>
+        <Text>Ini render optional</Text>
+        <TouchableOpacity onPress={() => setFirstName('selain Mutiara')}>
+          <Text>Ganti Nama yg diatas</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  } else {
+    return (
+      //scrollview
+      <View>
+        <Text>
+          {' '}
+          Hello my name is {firstName}, dan saya {age} tahun {''}
+        </Text>
 
-const Section = ({children, title}): Node => {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
+        <TouchableOpacity onPress={() => setFirstName('Cobalagi')}>
+          <Text>Ganti Nama yg bawah</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  }
+
+  /*  const RenderSomeScreens = props => {
+    return (
+      <View>
+        <Text> Nama: {props.nama}</Text>
+        <Text> Umur: {props.umur}</Text>
+        <Text> Umur: {props.asal}</Text>
+
+        <Text>
+          Hello my name is {firstName}, dan saya berumur {age}
+        </Text>
+
+        <TouchableOpacity onPress={() => setFirstName('Cobalagi')}>
+          <Text>Ganti Nama</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  };*/
+  //jsx ada render ulang, jadi harus pake useState
+
+  //render ulang jika ada perubahan pada props dan state
+  /*return (
+    <View>
+      <Text>Biodata</Text>
+
+      <RenderSomeScreens nama="mutia" umur={20} asal="kalimantan selatan" />
+      <RenderSomeScreens nama="nama2" umur={22} asal="kalimantan barat" />
+      <RenderSomeScreens nama="nama3" umur={23} asal="kalimantan timur" />
     </View>
-  );
-};
-
-const App: () => Node = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.js</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
-};
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
-
-export default App;
+  );*/
+}
