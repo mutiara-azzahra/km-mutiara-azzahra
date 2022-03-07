@@ -1,4 +1,16 @@
-import {View, Text, TouchableOpacity} from 'react-native';
+import {View, Text} from 'react-native';
+import React from 'react';
+import MainRoutes from '.src/routers/MainRoutes';
+
+export default function MainRoutes() {
+  return (
+    <NavigationContainer>
+      <MainRoutes></MainRoutes>
+    </NavigationContainer>
+  );
+}
+
+/*import {View, Text, TouchableOpacity} from 'react-native';
 import React, {useState} from 'react';
 
 //jsx
@@ -30,9 +42,9 @@ export default function App() {
         </TouchableOpacity>
       </View>
     );
-  }
+  } */
 
-  /*  const RenderSomeScreens = props => {
+/*  const RenderSomeScreens = props => {
     return (
       <View>
         <Text> Nama: {props.nama}</Text>
@@ -49,10 +61,10 @@ export default function App() {
       </View>
     );
   };*/
-  //jsx ada render ulang, jadi harus pake useState
+//jsx ada render ulang, jadi harus pake useState
 
-  //render ulang jika ada perubahan pada props dan state
-  /*return (
+//render ulang jika ada perubahan pada props dan state
+/*return (
     <View>
       <Text>Biodata</Text>
 
@@ -60,5 +72,5 @@ export default function App() {
       <RenderSomeScreens nama="nama2" umur={22} asal="kalimantan barat" />
       <RenderSomeScreens nama="nama3" umur={23} asal="kalimantan timur" />
     </View>
-  );*/
-}
+  );
+}*/
