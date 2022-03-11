@@ -9,14 +9,14 @@ import Explore from '../screens/Explore/Explore';
 
 const Stack = createNativeStackNavigator();
 
-export default function App() {
+export default function MainRoutes() {
   return (
-    <NavigationContainer>
+    <StackNavigator intialRouteName="Home">
       <Stack.Navigator name="Login" component={Login}></Stack.Navigator>
       <Stack.Navigator name="Home" component={Home}></Stack.Navigator>
       <Stack.Navigator name="Register" component={Register}></Stack.Navigator>
       <Stack.Navigator name="Profile" component={Profile}></Stack.Navigator>
       <Stack.Navigator name="Explore" component={Explore}></Stack.Navigator>
-    </NavigationContainer>
+    </StackNavigator>
   );
 }
