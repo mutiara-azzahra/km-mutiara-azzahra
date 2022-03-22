@@ -46,7 +46,7 @@ export default function App() {
       <View style={{flexDirection: 'row', padding: 15}}>
         <Image
           source={{uri: `${ImageUrl}${item.poster_path}`}}
-          style={{height: 200, width: 150}}
+          style={{height: 200, width: 150, borderRadius: 5}}
           resizeMode="cover"
         />
         <Text style={{padding: 15}}>{item.title}</Text>
