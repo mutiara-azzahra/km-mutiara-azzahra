@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import SplashScreen from 'react-native-splash-screen';
 import {NavigationContainer} from '@react-navigation/stack';
+import Routers from './src/routers/MainRoutes';
 
 export default function App() {
   //  useEffect(() => {
@@ -8,7 +9,7 @@ export default function App() {
   //  }, []);
   return (
     <NavigationContainer>
-      <MainRoutes />
+      <Routers />
     </NavigationContainer>
   );
 }

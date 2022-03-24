@@ -1,4 +1,4 @@
-import {View, Text, TouchableOpacity, FlatList, Image} from 'react-native';
+/*import {View, Text, TouchableOpacity, FlatList, Image} from 'react-native';
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import {ACCESS_TOKEN, BaseUrl, ImageUrl} from './src/helpers/apiAccessToken';
@@ -186,3 +186,4 @@ export default function Movie() {
     </View>
   );
 }
+*/
