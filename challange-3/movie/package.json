@@ -10,12 +10,14 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-navigation/stack": "^6.1.1",
     "axios": "^0.26.1",
     "react": "17.0.2",
     "react-feather": "^2.0.9",
     "react-native": "0.67.4",
     "react-native-config": "^1.4.5",
     "react-native-config-encrypted": "^1.0.2",
+    "react-native-gesture-handler": "^2.3.2",
     "react-native-splash-screen": "^3.3.0",
     "react-native-vector-icons": "^9.1.0"
   },
