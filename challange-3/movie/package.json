@@ -16,6 +16,7 @@
     "react-native": "0.67.4",
     "react-native-config": "^1.4.5",
     "react-native-config-encrypted": "^1.0.2",
+    "react-native-splash-screen": "^3.3.0",
     "react-native-vector-icons": "^9.1.0"
   },
   "devDependencies": {
