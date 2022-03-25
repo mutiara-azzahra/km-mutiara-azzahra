@@ -1,10 +1,10 @@
 import {View, Text} from 'react-native';
 import React from 'react';
 
-export default function Splash() {
+export default function MovieDetail() {
   return (
     <View>
-      <Text>Splash</Text>
+      <Text>MovieDetail</Text>
     </View>
   );
 }

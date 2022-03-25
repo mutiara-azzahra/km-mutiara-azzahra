@@ -1,6 +1,5 @@
 package com.movie;
 
-
 import android.os.Bundle;
 import com.facebook.react.ReactActivity;
 

@@ -1,33 +1,15 @@
-/*import {View, Text, TouchableOpacity, FlatList, Image} from 'react-native';
+import {View, Text, TouchableOpacity, FlatList, Image} from 'react-native';
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import {ACCESS_TOKEN, BaseUrl, ImageUrl} from './src/helpers/apiAccessToken';
+import {ACCESS_TOKEN, BaseUrl, ImageUrl} from '../../helpers/apiAccessToken';
 import Feather from 'react-native-vector-icons/Feather';
 
-import Config from 'react-native-config-encrypted';
-import ConfigProvider from 'react-native-config';
-
-// Configure your library to use the seed key
-Config.configure({
-  key: '^NALA_GENETICS',
-  provider: ConfigProvider,
-});
-export default function Movie() {
-  const SECRET = Config.get('BASE_URL', true);
-  console.log(SECRET, 'secret');
-  const [listMovieData, setListMovieData] = useState({});
+export default function Movie(props) {
+  const [listMovieData, setListMovieData] = useState([]);
   const [listNumber, setListNumber] = useState([]);
   const [startData, setStartData] = useState(1);
   const [endData, setEndData] = useState(6);
   const [curentPage, setCurentPage] = useState(1);
-
-  useEffect(() => {
-    getListMovieLatest(curentPage);
-  }, [curentPage]);
-
-  useEffect(() => {
-    renderListNumber();
-  }, [listMovieData]);
 
   const getListMovieLatest = async page => {
     try {
@@ -41,7 +23,15 @@ export default function Movie() {
     }
   };
 
-  const CardMovie = ({item, index}) => {
+  useEffect(() => {
+    getListMovieLatest('now_playing');
+  }, []);
+
+  useEffect(() => {
+    renderListNumber();
+  }, [listMovieData]);
+
+  const CardMovie = ({item}) => {
     return (
       <View style={{flexDirection: 'row', padding: 15}}>
         <Image
@@ -133,8 +123,6 @@ export default function Movie() {
 
   return (
     <View flex={1}>
-      <Text>List Movie {SECRET} </Text>
-
       <View
         style={{
           justifyContent: 'space-around',
@@ -142,6 +130,9 @@ export default function Movie() {
           margin: 10,
         }}>
         <TouchableOpacity
+          onPress={() => {
+            getListMovieLatest('popular');
+          }}
           style={{
             backgroundColor: '#E50914',
             padding: 10,
@@ -157,6 +148,9 @@ export default function Movie() {
             padding: 10,
             width: 100,
             borderRadius: 15,
+          }}
+          onPress={() => {
+            getListMovieLatest('top_rated');
           }}>
           <Text style={{textAlign: 'center', color: '#f5f5f1'}}>
             Top Rated{' '}
@@ -169,9 +163,12 @@ export default function Movie() {
             padding: 10,
             width: 100,
             borderRadius: 15,
+          }}
+          onPress={() => {
+            getListMovieLatest('now_playing');
           }}>
           <Text style={{textAlign: 'center', color: '#f5f5f1'}}>
-            Now Playing
+            Now Playing{''}
           </Text>
         </TouchableOpacity>
       </View>
@@ -186,4 +183,3 @@ export default function Movie() {
     </View>
   );
 }
-*/

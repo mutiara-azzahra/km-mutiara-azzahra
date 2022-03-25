@@ -1,15 +1,12 @@
-import React, {useEffect} from 'react';
-import SplashScreen from 'react-native-splash-screen';
-import {NavigationContainer} from '@react-navigation/stack';
-import Routers from './src/routers/MainRoutes';
+import {View, Text} from 'react-native';
+import React from 'react';
+import {NavigationContainer} from '@react-navigation/native';
+import Routes from './src/routers';
 
 export default function App() {
-  //  useEffect(() => {
-  //    SplashScreen.hide();
-  //  }, []);
   return (
     <NavigationContainer>
-      <Routers />
+      <Routes />
     </NavigationContainer>
   );
 }
